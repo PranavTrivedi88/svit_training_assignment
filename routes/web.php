@@ -19,19 +19,15 @@ Route::get('/', function () {
 
 Route::resource('posts', 'PostController');
 
-//List
-// Route::get('posts', 'PostController@index');
+// Route::get('posts', 'PostController@index')->name('post.index');
 
-// // Individual Entity
-// Route::get('posts/{id}', 'PostController@show');
+// Route::get('posts/create', 'PostController@create');
 
-// Create, Store, Edit, Update, Destroy
-
-// GET, POST, PUT, PATCH, DELETE
+// Route::get('posts/{post}', 'PostController@show')->name('post.show');
 
 // Route::post('posts', 'PostController@store');
-// Route::put('posts/{id}', 'PostController@update);
-// Route::delete('posts/{id}', 'PostController@destroy');
 
-// Route::get('posts/create', 'PostController@create);
-// Route::get('posts/{id}/edit', 'PostController@edit);
+// Route::get('posts/{post}/edit', 'PostController@edit');
+// Route::put('posts/{post}', 'PostController@update');
+
+// Route::delete('posts/{post}', 'PostController@destroy');

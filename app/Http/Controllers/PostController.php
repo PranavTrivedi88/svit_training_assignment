@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
 {
@@ -36,11 +37,7 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post;
-        $post->title = $request->title;
-        $post->body = $request->body;
-        $post->save();
-
+        Post::create($this->validatePost());
         return redirect('posts');
     }
 
@@ -63,7 +60,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        return view('post.edit', compact('post'));
     }
 
     /**
@@ -75,7 +72,8 @@ class PostController extends Controller
      */
     public function update(Request $request, Post $post)
     {
-        //
+        $post->update($this->validatePost());
+        return redirect('posts');
     }
 
     /**
@@ -86,6 +84,18 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        $post->delete();
+        return back();
+    }
+
+    private function validatePost(){
+
+        $validatedAttribute = request()->validate([
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        return $validatedAttribute;
+
     }
 }

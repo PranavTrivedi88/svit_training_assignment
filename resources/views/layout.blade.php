@@ -9,6 +9,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
         <!-- Styles -->
         <style>
@@ -39,6 +40,15 @@
                 justify-content: space-between;
             }
 
+            .title-container div{
+                display: flex;
+                align-items: center;
+            }
+
+            .title-container i{
+                font-size: 20px;
+            }
+
             span{
                 font-weight: 700;
                 padding-top: 10px;
@@ -50,6 +60,10 @@
 
             .create{
                 margin: 30px 0;
+            }
+
+            .error{
+                border: 1px solid #e33545;
             }
         </style>
     </head>
